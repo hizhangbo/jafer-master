@@ -1,0 +1,42 @@
+<component name="libraryTable">
+  <library name="z3950_all">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/xml/xalan.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xml/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xml/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xml/xmlParserAPIs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cql-java.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/java-zoom-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/zebulun.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/util/commons-lang-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/util/commons-collections.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts/struts.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts/jakarta-oro.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts/commons-validator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts/commons-fileupload.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts/commons-digester.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts/commons-collections.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts/commons-beanutils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts/antlr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/registries/uddi4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/portlets/portlet-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/osid/osidapi-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jdbc/jtds-0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jdbc/mysql-connector-java-2.0.14-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/build-only/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/axis-ant.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/axis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/commons-discovery.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/jaxrpc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/log4j-1.2.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/saaj.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/wsdl4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/oclc-srw-1.0.20080328.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

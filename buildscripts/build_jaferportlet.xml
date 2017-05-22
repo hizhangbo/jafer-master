@@ -1,0 +1,95 @@
+<!--
+    JAFER library Build Script Created on 04-January-2006
+
+    This build script compiles and creates the Jafer portlets
+
+-->
+
+<project name="JaferPortletCompiler" basedir=".." default="build-jafer-portlet">
+
+    <!-- Import the build resources file that specifies all the filesets / clath paths and support files -->
+    <import file="build_resources.xml"/>
+    <!-- import the compiler tasks -->
+    <import file="build_compilerscript.xml"/>
+
+    <!-- define the jafer registry output filenames -->
+    <property name="dist.jaferportlet.filename" value="JaferPortlets.war" />
+    <property name="dist.installjaferportlet.filename" value="JaferPortletsInstall.zip" />
+    <property name="jaferportlet.webapp.dir" value="${webapp.dir}/Portlet" />
+
+    <!-- create the Jafer registry distribution WAR -->
+    <target name="distribute-jafer-portlet" depends="compile,copy-resources">
+        <echo message="Creating ${dist.jaferportlet.filename} distribution" />
+
+        <delete file="${dist.dir}/${dist.jaferportlet.filename}" quiet="true" />
+
+        <zip destfile="${dist.dir}/${dist.jaferportlet.filename}">
+            <zipfileset  dir="${jaferportlet.webapp.dir}"   />
+            <zipfileset dir="${classes.dir}" prefix="${webinf.classes.dir}" >
+                <include name="org/jafer/conf/*" />
+                <include name="org/jafer/conf/characterSets/*" />
+                <include name="org/jafer/conf/registry/*" />
+                <include name="org/jafer/databeans/*" />
+                <include name="org/jafer/exception/*" />
+                <include name="org/jafer/interfaces/*" />
+                <include name="org/jafer/portlets/**/*" />
+                <include name="org/jafer/query/**/*" />
+                <include name="org/jafer/record/*" />
+                <include name="org/jafer/registry/*" />
+                <include name="org/jafer/registry/model/**/*" />
+                <include name="org/jafer/registry/uddi/**/*" />
+                <include name="org/jafer/transport/*" />
+                <include name="org/jafer/util/**/*" />
+                <include name="org/jafer/xsl/*" />
+                <include name="org/jafer/xsl/beans/*" />
+                <include name="org/jafer/xsl/cql/*" />
+                <include name="org/jafer/xsl/record/*" />
+                <include name="org/jafer/zclient/**/*" />
+                <include name="gov/**/*" />
+            </zipfileset>
+            <zipfileset  dir="${lib.dir}" prefix="${webinf.lib.dir}">
+                <include name="zebulun.jar" />
+                <include name="cql-java.jar" />
+            </zipfileset>
+            <zipfileset  dir="${axis.lib.dir}" prefix="${webinf.lib.dir}"/>
+            <zipfileset  dir="${xml.lib.dir}" prefix="${webinf.lib.dir}"/>
+            <zipfileset  dir="${registries.lib.dir}" prefix="${webinf.lib.dir}"/>
+            <zipfileset  dir="${util.lib.dir}" prefix="${webinf.lib.dir}"/>
+        </zip>
+
+        <echo message="${dist.jaferportlet.filename} WAR created" />
+    </target>
+
+    <!-- Build installer zip files -->
+    <target name="build-jafer-portlet-installer" depends="distribute-jafer-portlet,create-documentation">
+        <echo message="Building jafer portlet installer" />
+
+        <zip destfile="${dist.dir}/${dist.installjaferportlet.filename}">
+            <fileset file="${dist.dir}/${dist.jaferportlet.filename}" />
+            <zipfileset  dir="${doc.dir}" prefix="doc"/>
+        </zip>
+
+        <echo message="Completed building jafer portlet installer" />
+    </target>
+
+    <!-- MAIN BUILD TARGETS -->
+    <target name="build-jafer-portlet" depends="build-jafer-portlet-installer">
+        <echo message="Completed Jafer Portlet build" />
+    </target>
+
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

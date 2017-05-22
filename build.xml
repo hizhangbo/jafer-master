@@ -1,0 +1,53 @@
+<!--
+    JAFER library Build Script Created on 03-January-2006
+
+    This build script builds all the various aspects of JAFER:
+
+    Jafer Client
+    Jafer Server
+    JaferRegistry / JaferUDDI
+    SRUServer 
+    SRWServer
+-->
+
+<project name="Jafer" basedir="." default="help">
+
+    <!-- import the compiler tasks -->
+    <import file="./buildscripts/build_jaferuddi.xml"/>
+    <import file="./buildscripts/build_jaferregistry.xml"/>
+    <import file="./buildscripts/build_sruserver.xml"/>
+    <import file="./buildscripts/build_jaferclient.xml"/>
+    <import file="./buildscripts/build_jaferserver.xml"/>
+    <import file="./buildscripts/build_jafersrwserver.xml"/>
+    <import file="./buildscripts/build_jaferportlet.xml"/>
+    <import file="./buildscripts/build_jaferosid.xml"/>
+
+    <target name="build-all"
+        depends="build-jafer-UDDI,
+        build-jafer-registry,
+        build-jafer-client,
+        build-jafer-server,
+        build-jafer-srwserver,
+        build-jafer-sruserver,
+        build-jafer-portlet,
+        build-jafer-osid">
+        <echo message="Completed full build" />
+    </target>
+
+    <target name="help">
+      <echo message="Available build targets" />
+      <echo />
+      <echo message="build-jafer-UDDI" />
+      <echo message="build-jafer-registry" />
+      <echo message="build-jafer-sruserver" />
+      <echo message="build-jafer-srwserver" />
+      <echo message="build-jafer-client" />
+      <echo message="build-jafer-server" />
+      <echo message="build-jafer-portlet" />
+      <echo message="build-jafer-osid" />
+      <echo message="build-all" />
+      <echo message="deploy-srwserver" />
+      <echo message="undeploy-srwserver" />
+    </target>
+</project>
+
